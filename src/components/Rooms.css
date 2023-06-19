@@ -1,0 +1,14 @@
+.rectangle-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top:20px;
+  }
+  
+
+.door {
+    width: 100px;
+    height: 200px;
+    background-color: rgb(247, 196, 103);
+    margin-right: 10px;
+  }
