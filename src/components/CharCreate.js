@@ -6,14 +6,7 @@ import { getDatabase, ref, get, set } from "firebase/database";
 import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
-
-const firebaseConfig = {
-  databaseURL:
-    "https://cubicle-b4654-default-rtdb.asia-southeast1.firebasedatabase.app/",
-};
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+import { database } from "../services/Firebase";
 
 const CharCreate = () => {
   // Routing
