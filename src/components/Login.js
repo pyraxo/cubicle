@@ -36,7 +36,6 @@ const Login = () => {
     if (data && data.password.toString() === password) {
       const { userId } = data;
       localStorage.setItem("userData", JSON.stringify({ username, userId }));
-      console.log("login");
       navigate("/", { replace: true });
     }
   };
@@ -50,7 +49,6 @@ const Login = () => {
       await saveValue(dbpath, { password, userId });
       localStorage.setItem("userData", JSON.stringify({ username, userId }));
       navigate("/", { replace: true });
-      console.log("inv");
     }
   };
 
