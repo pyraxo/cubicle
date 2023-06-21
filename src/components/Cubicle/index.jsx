@@ -1,17 +1,11 @@
 import React, { useEffect } from "react";
 import Phaser from "phaser";
-// import tilemap from "assets/iso-64x64-outside.png";
-// import tilemap2 from "assets/iso-64x64-building.png";
-// import isorpg from "assets/isorpg.json";
-import tilemap from "../../assets/iso-sandbox.png";
+import tilemap from "assets/iso-sandbox.png";
 import sandbox from "assets/sandbox.json";
 import "./style.css";
 
 class CubicleScene extends Phaser.Scene {
   preload() {
-    // this.load.image("tiles", tilemap);
-    // this.load.image("tiles2", tilemap2);
-    // this.load.tilemapTiledJSON("map", isorpg);
     this.load.image("tiles", tilemap);
     this.load.tilemapTiledJSON("map", sandbox);
   }
@@ -19,20 +13,12 @@ class CubicleScene extends Phaser.Scene {
   create() {
     const map = this.add.tilemap("map");
 
-    // const tileset1 = map.addTilesetImage("iso-64x64-outside", "tiles");
-    // const tileset2 = map.addTilesetImage("iso-64x64-building", "tiles2");
-
-    // map.createLayer("Tile Layer 1", [tileset1, tileset2]);
-    // map.createLayer("Tile Layer 2", [tileset1, tileset2]);
-    // map.createLayer("Tile Layer 3", [tileset1, tileset2]);
-    // map.createLayer("Tile Layer 4", [tileset1, tileset2]);
-    // map.createLayer("Tile Layer 5", [tileset1, tileset2]);
-
     const tileset = map.addTilesetImage("isometric-sandbox-sheet", "tiles");
     map.createLayer("Tile Layer 1", [tileset]);
+    map.createLayer("Tile Layer 2", [tileset]);
+    map.createLayer("Tile Layer 3", [tileset]);
 
-    // this.cameras.main.centerOn(0, 150);
-    this.cameras.main.centerOn(0, 150);
+    this.cameras.main.centerOn(0, 100);
 
     const cursors = this.input.keyboard.createCursorKeys();
 
