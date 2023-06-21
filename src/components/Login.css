@@ -1,6 +1,5 @@
-
 .login {
-    text-align: center;
+  text-align: center;
 }
 
 .login_container {
@@ -10,18 +9,15 @@
   height: 90vh; /* Set the desired height for the container */
 }
 
-
-
 .cubicle_logo {
-    top: 0px;
-    left: 110.32px;
-    width: 67.25px;
-    height: 77.66px;
+  top: 0px;
+  left: 110.32px;
+  width: 67.25px;
+  height: 77.66px;
 }
 
-
 .field_container {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .button_container {
