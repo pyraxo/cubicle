@@ -13,8 +13,10 @@ const Home = () => {
 
   return (
     <>
-      <div>Welcome back, {userData.username}!</div>
-      <Cubicle />
+      <div className="home">
+        <h1 className="welcome">Welcome back, {userData.username}!</h1>
+        <Cubicle/>
+      </div>
     </>
   );
 };
