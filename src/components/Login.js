@@ -8,12 +8,12 @@ import { fetchValue, saveValue } from "../services/Firebase";
 import { TextField, Button } from "@mui/material";
 
 import "./Login.css";
+import Blur from "./Blur";
 
 const validUsername = new RegExp("^[a-zA-Z0-9]+$");
 
 const Login = () => {
   const { state } = useLocation();
-  const { from } = state || {};
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -54,6 +54,7 @@ const Login = () => {
 
   return (
     <div className="login_container">
+      <Blur />
       <div className="login">
         <h1>Cubicle</h1>
         <div>
