@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.Login{
+.Login {
   text-align: center;
 }
 .App-logo {
@@ -38,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: "Poppins";
 }

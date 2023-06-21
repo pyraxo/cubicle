@@ -5,39 +5,52 @@ import profileImage from "assets/profile.png";
 import coworkersImage from "assets/coworkers.png";
 
 import "./style.css";
+import Portfolio from "components/Portfolio";
 
-const IconNavBar = ({ active }) => {
+const IconNavBar = ({ active, username }) => {
   const navigate = useNavigate();
   const [activeButton, setActiveButton] = useState(null);
+  const [portfolioVisible, setPortfolioVisible] = useState(false);
 
   const handleButtonClick = (route) => {
     navigate(route, { replace: true });
     setActiveButton(route);
   };
 
+  const togglePortfolioVisibility = () => {
+    setPortfolioVisible(!portfolioVisible);
+  };
+
   return (
-    <div className="image-container">
-      <button
-        className={`image-button ${active === "portfolio" ? "active" : ""}`}
-        onClick={() => handleButtonClick("/portfolio")}
-      >
-        <img src={portfolioImage} alt="" className="image" />
-      </button>
+    <>
+      <div className="image-container">
+        <button
+          className={`image-button ${active === "portfolio" ? "active" : ""}`}
+          onClick={togglePortfolioVisibility}
+        >
+          <img src={portfolioImage} alt="" className="image" />
+        </button>
 
-      <button
-        className={`image-button ${activeButton === "home" ? "active" : ""}`}
-        onClick={() => handleButtonClick("/")}
-      >
-        <img src={profileImage} alt="" className="image" />
-      </button>
+        <button
+          className={`image-button ${activeButton === "home" ? "active" : ""}`}
+          onClick={() => handleButtonClick("/")}
+        >
+          <img src={profileImage} alt="" className="image" />
+        </button>
 
-      <button
-        className={`image-button ${activeButton === "rooms" ? "active" : ""}`}
-        onClick={() => handleButtonClick("/rooms")}
-      >
-        <img src={coworkersImage} alt="" className="image" />
-      </button>
-    </div>
+        <button
+          className={`image-button ${activeButton === "rooms" ? "active" : ""}`}
+          onClick={() => handleButtonClick("/rooms")}
+        >
+          <img src={coworkersImage} alt="" className="image" />
+        </button>
+      </div>
+      {portfolioVisible && (
+        <div className="portfolio-container">
+          <Portfolio className="portfolio-view" username={username} />
+        </div>
+      )}
+    </>
   );
 };
 export default IconNavBar;

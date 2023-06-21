@@ -1,4 +1,5 @@
 import "./App.css";
+import "@fontsource/poppins";
 
 import {
   Navigate,
@@ -8,7 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import useLocalStorage from "./hooks/useLocalStorage";
 

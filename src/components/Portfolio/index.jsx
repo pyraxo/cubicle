@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./portfolio.css";
+import React, { useState } from "react";
+import "./style.css";
 
 const LeftBranch = ({ event, description }) => {
   const [show, setShow] = useState(false);
@@ -25,10 +25,7 @@ const RightBranch = ({ event, description }) => {
 
   return (
     <div className="RightBranch">
-      <div
-        className="Right-Header"
-        onClick={() => setShow(!show)}
-      >
+      <div className="Right-Header" onClick={() => setShow(!show)}>
         <span className="HeaderText">{event}</span> <br />
         {show === true && <p className="moreInfo">{description}</p>}
       </div>
@@ -46,9 +43,18 @@ const Portfolio = (props) => {
   return (
     <div className="Portfolio_Tree">
       <h1>Here's what {props.username}'s been up to.</h1>
-      <LeftBranch event="Code EXP 2023" description="Did some Programming in CodeEXP 2022, ngl was one of the best hackathons ever."/>
-      <RightBranch event="What The Hack 2023" description="Not as cool as Code EXP but welp, there can only be one."/>
-      <LeftBranch event="Halloween Hacks 2023" description="Very spooky hackathon, pretty cool actually!"/>
+      <LeftBranch
+        event="Code EXP 2023"
+        description="Did some Programming in CodeEXP 2022, ngl was one of the best hackathons ever."
+      />
+      <RightBranch
+        event="What The Hack 2023"
+        description="Not as cool as Code EXP but welp, there can only be one."
+      />
+      <LeftBranch
+        event="Halloween Hacks 2023"
+        description="Very spooky hackathon, pretty cool actually!"
+      />
     </div>
   );
 };
