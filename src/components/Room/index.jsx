@@ -1,7 +1,9 @@
 import "./style.css";
 
-import React, { useRef } from "react";
-import Spline from "@splinetool/react-spline";
+import React, { Suspense } from "react";
+import { CircularProgress } from "@mui/material";
+
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 export default function Room() {
   // const noticeBoard = useRef();
@@ -15,11 +17,13 @@ export default function Room() {
 
   return (
     <div className="spline-view">
-      <Spline
-        onLoad={onLoad}
-        onTouchStart={handleTap}
-        scene="https://prod.spline.design/rYazmrGbQvWSWoUE/scene.splinecode"
-      />
+      <Suspense fallback={<CircularProgress />}>
+        <Spline
+          onLoad={onLoad}
+          onTouchStart={handleTap}
+          scene="https://prod.spline.design/rYazmrGbQvWSWoUE/scene.splinecode"
+        />
+      </Suspense>
     </div>
   );
 }
