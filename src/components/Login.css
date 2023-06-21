@@ -10,10 +10,9 @@
 }
 
 .cubicle_logo {
-  top: 0px;
-  left: 110.32px;
-  width: 67.25px;
-  height: 77.66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .field_container {

@@ -1,0 +1,13 @@
+.blur-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.blur-bg img {
+  position: relative;
+  width: 120vw;
+  height: 120vh;
+}
