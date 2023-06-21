@@ -14,8 +14,8 @@ const Home = () => {
       <Blur />
       <div className="home">
         <h1 className="welcome">Welcome back, {userData.username}!</h1>
-        <Room />
-        <IconNavBar></IconNavBar>
+        <Room hostName={userData.username} />
+        <IconNavBar />
       </div>
     </>
   );

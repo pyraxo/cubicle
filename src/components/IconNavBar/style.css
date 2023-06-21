@@ -1,0 +1,14 @@
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Added to vertically center the images */
+  width: 100vw;
+  position: absolute;
+  bottom: 10%;
+  padding: 0 20%; /* Added padding to adjust spacing */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.image-button.active {
+  background-color: #eaeaea; /* Set your desired background color */
+}

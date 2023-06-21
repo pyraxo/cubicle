@@ -13,9 +13,9 @@ import React, { useEffect, useState } from "react";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 import Login from "./components/Login";
-import CharCreate from "./components/CharCreate";
 import Rooms from "./components/Rooms";
 import Home from "./components/Home";
+import VisitingRoom from "components/VisitingRoom";
 
 const AuthWrapper = () => {
   const [userData] = useLocalStorage("userData", {});
@@ -30,7 +30,7 @@ function App() {
         <Route element={<AuthWrapper />}>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Rooms />} />
-          <Route path="/room/:hostName" element={<Rooms />} />
+          <Route path="/room/:hostName" element={<VisitingRoom />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>

@@ -23,7 +23,7 @@ const Rooms = () => {
             <div
               className="door"
               key={idx}
-              onClick={() => navigate(`/room/${idx}`)}
+              onClick={() => navigate(`/room/${idx}`, { replace: true })}
             />
           ))}
     </div>
