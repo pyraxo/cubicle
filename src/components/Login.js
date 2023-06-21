@@ -117,7 +117,7 @@ const Login = () => {
             </div>
           </div>
         )}
-          <div className="button_container">
+          <div className="button_container2">
             <Button variant="contained" onClick={handleTogglePage}>New here? Click me!</Button>
           </div>
         </div>

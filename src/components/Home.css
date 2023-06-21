@@ -21,6 +21,11 @@
   box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
+.image-button.active {
+  background-color: #eaeaea; /* Set your desired background color */
+}
+
+
 .welcome {
   position: absolute;
   top: 10%;

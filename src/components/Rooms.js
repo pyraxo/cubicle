@@ -8,13 +8,25 @@ import { useNavigate } from "react-router-dom";
 import { database } from "../services/Firebase";
 
 const Rooms = () => {
+  const [storedUsername, setStoredUsername] = useState("");
+
+  useEffect(() => {
+    const getUsernameFromLocalStorage = () => {
+      const userDataString = localStorage.getItem("userData");
+      if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        setStoredUsername(userData.username);
+      }
+    };
+
+    getUsernameFromLocalStorage();
+  }, []);
   const location = useLocation();
-  const { username, officeId } = location.state;
   const [noDoors, setNoDoors] = useState(0);
   const [data, setData] = useState(0);
 
   const loadRooms = async () => {
-    const snapshot = await get(ref(database, `OFFICES/${officeId}/users`));
+    const snapshot = await get(ref(database, `OFFICES/01/users`));
     const fetchedData = snapshot.val();
 
     setNoDoors(Object.keys(fetchedData).length);
@@ -28,7 +40,7 @@ const Rooms = () => {
     <div
       className="door"
       key={index}
-      onClick={() => navigate("/Room", { state: { username } })}
+      onClick={() => navigate("/Room", { state: { storedUsername } })}
     >
       {Object.keys(data)[index].toString()}
     </div>

@@ -21,5 +21,18 @@
 }
 
 .button_container {
-  margin-top: 20px;
+  margin-top: 30px;
 }
+
+.button_container2 {
+  margin-top: 10px;
+}
+
+.button_container button {
+  width: 100%;
+}
+
+.button_container2 button {
+  width: 100%;
+}
+
