@@ -27,6 +27,7 @@ const Rooms = () => {
 
   const loadRooms = async () => {
     const snapshot = await get(ref(database, `OFFICES/01/users`));
+    console.log(snapshot);
     const fetchedData = snapshot.val();
 
     setNoDoors(Object.keys(fetchedData).length);
