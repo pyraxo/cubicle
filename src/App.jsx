@@ -29,10 +29,10 @@ function App() {
       <Routes>
         <Route element={<AuthWrapper />}>
           <Route path="/" element={<Home />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/room/:hostName" element={<Rooms />} />
         </Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/CharCreate" element={<CharCreate />} />
-        <Route path="/Rooms" element={<Rooms />} />
       </Routes>
     </Router>
   );
