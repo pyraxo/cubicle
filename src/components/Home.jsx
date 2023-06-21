@@ -10,6 +10,7 @@ import coworkersImage from "assets/coworkers.png";
 import Portfolio from "./portfolio";
 
 import "./Home.css";
+import Blur from "./Blur";
 
 const Home = () => {
   const [userData] = useLocalStorage("userData", {});
@@ -28,6 +29,7 @@ const Home = () => {
 
   return (
     <>
+      <Blur />
       <div className="home">
         <h1 className="welcome">Welcome back, {userData.username}!</h1>
         <Room />
@@ -57,6 +59,8 @@ const Home = () => {
             <Portfolio className="portfolio-view" username={userData.username}/>
           </div>
         )}
+        <Room hostName={userData.username} />
+        <IconNavBar />
       </div>
     </>
   );

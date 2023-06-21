@@ -1,10 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, set } from "firebase/database";
+import { getDatabase, ref, get, set, onValue, off } from "firebase/database";
 
 export const app = initializeApp({
   databaseURL: process.env.REACT_APP_FIREBASE_URL,
 });
 export const database = getDatabase(app);
+const listeners = {};
 
 export const fetchValue = async (path) => {
   try {
@@ -22,3 +23,9 @@ export const saveValue = async (path, value) => {
     console.error("Error saving data:", err);
   }
 };
+
+export const listen = (path, callback) =>
+  onValue(ref(database, path), callback);
+
+export const stopListen = (path, listener) =>
+  off(ref(database, path), listener);
