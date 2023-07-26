@@ -18,4 +18,5 @@
   width: 100vw;
   font-weight: 00;
   color: #1a1a1a;
+  z-index: -10;
 }

@@ -7,7 +7,7 @@ import coworkersImage from "assets/coworkers.png";
 import "./style.css";
 import Portfolio from "components/Portfolio";
 
-const IconNavBar = ({ active, username }) => {
+const IconNavBar = ({ active, username, toggleWelcome }) => {
   const navigate = useNavigate();
   const [activeButton, setActiveButton] = useState(null);
   const [portfolioVisible, setPortfolioVisible] = useState(false);
@@ -19,6 +19,7 @@ const IconNavBar = ({ active, username }) => {
 
   const togglePortfolioVisibility = () => {
     setPortfolioVisible(!portfolioVisible);
+    // toggleWelcome();
   };
 
   return (

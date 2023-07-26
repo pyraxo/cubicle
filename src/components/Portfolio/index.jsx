@@ -42,7 +42,7 @@ const RightBranch = ({ event, description }) => {
 const Portfolio = (props) => {
   return (
     <div className="Portfolio_Tree">
-      <h1>Here's what {props.username}'s been up to.</h1>
+      <h2>Here's what {props.username}'s been up to.</h2>
       <LeftBranch
         event="Code EXP 2023"
         description="Did some Programming in CodeEXP 2022, ngl was one of the best hackathons ever."

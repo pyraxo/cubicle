@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 
 import useLocalStorage from "../hooks/useLocalStorage";
 import Room from "./Room";
@@ -7,10 +7,14 @@ import Room from "./Room";
 import "./Home.css";
 import Blur from "./Blur";
 import IconNavBar from "./IconNavBar";
+import { useState } from "react";
 
 const VisitingRoom = () => {
   const [userData] = useLocalStorage("userData", {});
   const { hostName } = useParams();
+
+  const [hideWelcome, setHideWelcome] = useState(false);
+  const toggleWelcome = () => setHideWelcome(!hideWelcome);
 
   return (
     <>
@@ -18,7 +22,7 @@ const VisitingRoom = () => {
       <div className="home">
         <h1 className="welcome">You are now visiting {hostName}!</h1>
         <Room hostName={hostName} visitor={userData} />
-        <IconNavBar />
+        <IconNavBar toggleWelcome={toggleWelcome} />
       </div>
     </>
   );
